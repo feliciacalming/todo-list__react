@@ -1,21 +1,26 @@
-import { useReducer } from "react";
-import { ActionType, TodosReducer } from "../../reducers/TodosReducer";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 interface IAddTodoProps {
-  createTodo(userInput: string): void;
+  createTodo: (text: string) => void;
 }
 
 export const AddTodo = ({ createTodo }: IAddTodoProps) => {
-  const [todos, dispatch] = useReducer(TodosReducer, []);
+  const [todo, setTodo] = useState("");
 
-  const add = (text: string) => {
-    dispatch({ type: ActionType.ADD, payload: text });
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setTodo(e.target.value);
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("Din todo i AddTodo:", todo);
+    createTodo(todo);
   };
 
   return (
     <>
-      <form>
-        <input type="text" onChange={handleInput} />
+      <form onSubmit={handleSubmit}>
+        <input type="text" onChange={handleInput} value={todo} />
       </form>
     </>
   );
