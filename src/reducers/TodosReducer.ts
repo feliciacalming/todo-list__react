@@ -9,6 +9,7 @@ interface IAction {
 export enum ActionType {
   ADD,
   TOGGLE,
+  DELETE,
 }
 
 export const TodosReducer = (todos: Todo[], action: IAction) => {
@@ -24,6 +25,10 @@ export const TodosReducer = (todos: Todo[], action: IAction) => {
         }
         return todo;
       });
+    }
+
+    case ActionType.DELETE: {
+      return todos.filter((todo) => todo.id != action.payload);
     }
 
     default:
