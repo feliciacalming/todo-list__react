@@ -1,0 +1,36 @@
+.todo {
+  width: 60vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(196, 192, 255);
+
+  &__task-container {
+    display: inline-flex;
+    gap: 20px;
+  }
+
+  &__task {
+    display: inline;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+
+  &__checkbox {
+    display: inline;
+  }
+
+  &__deleteBtn {
+    background-color: rgba(194, 194, 194, 0.33);
+    border: none;
+    border-radius: 3px;
+
+    &:hover {
+      border: 1px solid black;
+      background-color: rgb(151, 78, 219);
+      color: white;
+    }
+  }
+}
