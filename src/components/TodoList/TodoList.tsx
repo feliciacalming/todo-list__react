@@ -1,3 +1,4 @@
+import "./TodoList.scss";
 import { Todo } from "../../models/Todo";
 import { ShowTodo } from "../ShowTodo/ShowTodo";
 
@@ -10,7 +11,7 @@ export const TodoList = ({ todos }: TodoListProps) => {
     <>
       <div className="todos-container">
         {todos.map((todo, index) => {
-          return <ShowTodo todo={todo}></ShowTodo>;
+          return <ShowTodo todo={todo} key={index}></ShowTodo>;
         })}
       </div>
     </>
