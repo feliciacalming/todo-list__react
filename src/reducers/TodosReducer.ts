@@ -14,12 +14,7 @@ export enum ActionType {
 export const TodosReducer = (todos: Todo[], action: IAction) => {
   switch (action.type) {
     case ActionType.ADD: {
-      const newState = [
-        ...todos,
-        new Todo(action.payload, false, new Date().getTime()),
-      ];
-      console.log("TodosReducer", newState);
-      return newState;
+      return [...todos, new Todo(action.payload, false, new Date().getTime())];
     }
 
     default:
