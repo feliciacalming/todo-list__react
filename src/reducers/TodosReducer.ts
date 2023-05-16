@@ -17,6 +17,15 @@ export const TodosReducer = (todos: Todo[], action: IAction) => {
       return [...todos, new Todo(action.payload, false, new Date().getTime())];
     }
 
+    case ActionType.TOGGLE: {
+      return todos.map((todo) => {
+        if (todo.id === action.payload) {
+          return { ...todo, done: !todo.done };
+        }
+        return todo;
+      });
+    }
+
     default:
       return todos;
   }
