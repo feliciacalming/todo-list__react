@@ -15,11 +15,19 @@ export const TodoApp = () => {
     dispatch({ type: ActionType.TOGGLE, payload: id });
   };
 
+  const deleteTodo = (id: number) => {
+    dispatch({ type: ActionType.DELETE, payload: id });
+  };
+
   return (
     <>
       <div className="wrapper">
         <AddTodo createTodo={add}></AddTodo>
-        <TodoList toggle={toggle} todos={todos}></TodoList>
+        <TodoList
+          toggle={toggle}
+          todos={todos}
+          deleteTodo={deleteTodo}
+        ></TodoList>
       </div>
     </>
   );
