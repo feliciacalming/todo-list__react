@@ -9,9 +9,11 @@ export const ShowTodo = ({ todo }: ShowTodoProps) => {
   return (
     <>
       <div className="todo">
-        <input type="checkbox" />
-        <li>{todo.task}</li>
-        <span className="todo__deleteBtn">X</span>
+        <div className="todo__task-container">
+          <input type="checkbox" className="todo__checkbox" />
+          <li className="todo__task">{todo.task}</li>
+        </div>
+        <button className="todo__deleteBtn">X</button>
       </div>
     </>
   );
