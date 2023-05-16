@@ -1,15 +1,18 @@
+import "./ShowTodo.scss";
 import { Todo } from "../../models/Todo";
 
 interface ShowTodoProps {
-  todos: Todo[];
+  todo: Todo;
 }
 
-export const ShowTodo = ({ todos }: ShowTodoProps) => {
+export const ShowTodo = ({ todo }: ShowTodoProps) => {
   return (
     <>
-      {todos.map((todo) => (
-        <h3>{todo.task}</h3>
-      ))}
+      <div className="todo">
+        <input type="checkbox" />
+        <li>{todo.task}</li>
+        <span className="todo__deleteBtn">X</span>
+      </div>
     </>
   );
 };
