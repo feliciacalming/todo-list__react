@@ -1,7 +1,45 @@
-.text-input {
-  border-radius: 5px;
-  border: 1px solid black;
-  width: 60vw;
-  padding: 7px;
-  font-family: futura;
+form {
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+
+  @include mix.desktop {
+    width: 50vw;
+  }
+}
+
+.input-container {
+  &__text-input {
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 80%;
+    font-family: futura;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include mix.desktop {
+      width: 40vw;
+      height: 30px;
+    }
+  }
+
+  &__btn {
+    @include mix.flexCenterCol;
+    background-color: var.$color-primary;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+
+    &:hover {
+      border: none;
+    }
+  }
 }
