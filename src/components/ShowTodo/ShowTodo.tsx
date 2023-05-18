@@ -26,7 +26,7 @@ export const ShowTodo = ({ todo, toggleTodo, deleteTodo }: ShowTodoProps) => {
           </li>
         </div>
         <button className="todo__deleteBtn" onClick={() => deleteTodo(todo.id)}>
-          X
+          <i className="bi bi-x-square"></i>
         </button>
       </div>
     </>
