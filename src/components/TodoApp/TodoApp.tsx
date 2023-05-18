@@ -3,7 +3,7 @@ import { useEffect, useReducer } from "react";
 import { ActionType, TodosReducer } from "../../reducers/TodosReducer";
 import { AddTodo } from "../AddTodo/AddTodo";
 import { TodoList } from "../TodoList/TodoList";
-import { saveToLS } from "../helpers/saveToLS";
+import { saveToLS } from "../../helpers/saveToLS";
 
 export const TodoApp = () => {
   const [todos, dispatch] = useReducer(TodosReducer, []);
@@ -28,6 +28,7 @@ export const TodoApp = () => {
   return (
     <>
       <div className="wrapper">
+        <h1 className="title">Things to do today:</h1>
         <AddTodo createTodo={add}></AddTodo>
         <TodoList
           toggle={toggle}
