@@ -1,3 +1,4 @@
+import "./AddTodo.scss";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 interface IAddTodoProps {
@@ -13,15 +14,24 @@ export const AddTodo = ({ createTodo }: IAddTodoProps) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log("Din todo i AddTodo:", todo);
     createTodo(todo);
+    setTodo("");
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleInput} value={todo} />
-      </form>
+      <div className="input-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="input-container__text-input"
+            onChange={handleInput}
+            value={todo}
+          />
+
+          <button className="input-container__btn">+</button>
+        </form>
+      </div>
     </>
   );
 };
