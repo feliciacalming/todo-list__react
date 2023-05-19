@@ -1,11 +1,7 @@
 import "./AddTodo.scss";
 import { ChangeEvent, FormEvent, useState } from "react";
 
-interface IAddTodoProps {
-  createTodo: (text: string) => void;
-}
-
-export const AddTodo = ({ createTodo }: IAddTodoProps) => {
+export const AddTodo = () => {
   const [todo, setTodo] = useState("");
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +10,6 @@ export const AddTodo = ({ createTodo }: IAddTodoProps) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    createTodo(todo);
     setTodo("");
   };
 
