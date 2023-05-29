@@ -1,17 +1,20 @@
 import "./TodoApp.scss";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { ActionType, TodosReducer } from "../../reducers/TodosReducer";
 import { AddTodo } from "../AddTodo/AddTodo";
 import { TodoList } from "../TodoList/TodoList";
 import { TodosContext } from "../../contexts/TodosContext";
 import { TodosDispatchContext } from "../../contexts/TodosDispatchContext";
+import { saveToLS } from "../../helpers/saveToLS";
+import { getFromLS } from "../../helpers/getFromLS";
 
 export const TodoApp = () => {
-  const [todos, dispatch] = useReducer(TodosReducer, []);
+  // const initialState = getFromLS();
+  const [todos, dispatch] = useReducer(TodosReducer, getFromLS());
 
-  // useEffect(() => {
-  //   saveToLS(todos);
-  // }, [todos]);
+  useEffect(() => {
+    saveToLS(todos);
+  }, [todos]);
 
   const toggle = (id: number) => {
     dispatch({ type: ActionType.TOGGLED, payload: id.toString() });
