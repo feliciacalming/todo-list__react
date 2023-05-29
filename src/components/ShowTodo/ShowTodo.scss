@@ -1,7 +1,7 @@
 .todo {
   width: 78vw;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 90% 10%;
   justify-content: space-between;
   align-items: baseline;
   padding: 5px;
@@ -14,9 +14,11 @@
   }
 
   &__task-container {
+    // grid-area: 1;
     display: inline-flex;
     align-items: baseline;
     gap: 10px;
+    width: 100%;
   }
 
   &__task {
@@ -46,11 +48,10 @@ i {
   padding: 0;
   font-size: 1rem;
   z-index: 3;
+  color: black;
 
   &:hover {
     color: red;
-    font-size: 1.2rem;
-    border-radius: 5px;
     margin: 0;
     padding: 0;
   }

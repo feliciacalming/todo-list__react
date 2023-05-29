@@ -2,6 +2,7 @@ form {
   display: flex;
   justify-content: space-around;
   width: 80vw;
+  height: 6vh;
 
   @include mix.desktop {
     width: 50vw;
@@ -10,6 +11,8 @@ form {
 
 .input-container {
   &__text-input {
+    display: grid;
+    grid-template-columns: auto auto;
     border-radius: 5px;
     border: 2px solid black;
     width: 80%;
@@ -35,11 +38,26 @@ form {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    border-bottom: 3px solid black;
-    border-left: 3px solid black;
+    box-shadow: -3px 3px black;
 
     &:hover {
       border: none;
+      box-shadow: -0px 0px black;
+      margin-left: -3px;
+      margin-right: 3px;
+      margin-top: 3px;
+    }
+
+    &:active {
+      border: none;
+      box-shadow: -0px 0px black;
+      margin-left: -3px;
+      margin-right: 3px;
+      margin-top: 3px;
+    }
+
+    &:after {
+      box-shadow: -3px 3px black;
     }
   }
 }
