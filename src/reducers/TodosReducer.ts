@@ -29,7 +29,7 @@ export const TodosReducer = (todos: Todo[], action: IAction) => {
     }
 
     case ActionType.DELETED: {
-      return todos.filter((todo) => todo.id !== action.payload);
+      return todos.filter((todo) => todo.id.toString() !== action.payload);
     }
 
     default:
