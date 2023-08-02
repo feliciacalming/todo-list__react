@@ -1,6 +1,6 @@
 form {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 80vw;
   height: 6vh;
 
@@ -18,13 +18,14 @@ form {
     width: 80%;
     font-family: "Jost", sans-serif;
     text-align: center;
+    margin-right: 20px;
 
     &:focus {
       outline: none;
     }
 
     @include mix.desktop {
-      width: 40vw;
+      width: 70%;
       height: 30px;
     }
   }

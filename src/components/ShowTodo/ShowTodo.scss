@@ -14,7 +14,6 @@
   }
 
   &__task-container {
-    // grid-area: 1;
     display: inline-flex;
     align-items: baseline;
     gap: 10px;
@@ -58,8 +57,6 @@ i {
 
   &:hover {
     color: red;
-    margin: 0;
-    padding: 0;
   }
 }
 

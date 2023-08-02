@@ -1,11 +1,21 @@
 .wrapper {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: rgb(240, 241, 248);
+  background: radial-gradient(
+    rgba(192, 194, 255, 0.388) 30%,
+    rgba(68, 52, 172, 0.464)
+  );
+}
+
+.content-wrapper {
+  @include mix.flexCenterCol;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
