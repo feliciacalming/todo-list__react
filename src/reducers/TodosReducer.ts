@@ -1,4 +1,3 @@
-import { sortTodos } from "../helpers/sortTodos";
 import { Todo } from "../models/Todo";
 
 export interface IAction {

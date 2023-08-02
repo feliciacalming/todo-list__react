@@ -41,6 +41,7 @@
     padding-right: 3px;
     padding-left: 3px;
     cursor: pointer;
+    transition: scale 0.25s;
 
     &:hover {
       scale: 1.3;
