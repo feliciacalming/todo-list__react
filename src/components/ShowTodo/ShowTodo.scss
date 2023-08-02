@@ -23,7 +23,8 @@
 
   &__task {
     display: inline;
-    font-family: "Tank Junior", sans-serif;
+    font-family: "Jost", sans-serif;
+    font-weight: bold;
   }
 
   &__checkbox {
@@ -40,6 +41,10 @@
     padding-right: 3px;
     padding-left: 3px;
     cursor: pointer;
+
+    &:hover {
+      scale: 1.3;
+    }
   }
 }
 
