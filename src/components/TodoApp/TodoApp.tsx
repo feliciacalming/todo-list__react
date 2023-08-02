@@ -27,17 +27,19 @@ export const TodoApp = () => {
   return (
     <>
       <div className="wrapper">
-        <h1 className="title">Things to do today:</h1>
-        <TodosContext.Provider value={todos}>
-          <TodosDispatchContext.Provider value={dispatch}>
-            <AddTodo></AddTodo>
-            <TodoList
-              toggle={toggle}
-              todos={todos}
-              deleteTodo={deleteTodo}
-            ></TodoList>
-          </TodosDispatchContext.Provider>
-        </TodosContext.Provider>
+        <div className="content-wrapper">
+          <h1 className="title">Things to do today:</h1>
+          <TodosContext.Provider value={todos}>
+            <TodosDispatchContext.Provider value={dispatch}>
+              <AddTodo></AddTodo>
+              <TodoList
+                toggle={toggle}
+                todos={todos}
+                deleteTodo={deleteTodo}
+              ></TodoList>
+            </TodosDispatchContext.Provider>
+          </TodosContext.Provider>
+        </div>
       </div>
     </>
   );
