@@ -37,14 +37,13 @@ form {
     color: white;
     width: 30px;
     height: 30px;
-    border: none;
+    border: 1.5px solid black;
     border-radius: 5px;
     font-size: 1rem;
     box-shadow: -3px 3px black;
     transition: box-shadow 0.2s, margin 0.2s;
 
     &:hover {
-      border: none;
       box-shadow: -0px 0px black;
       margin-left: -3px;
       margin-right: 3px;
