@@ -14,6 +14,10 @@ export const TodoList = () => {
         {todos.map((todo, index) => {
           return <ShowTodo todo={todo} key={index}></ShowTodo>;
         })}
+
+        <div className="button-container">
+          <button className="clearBtn">clear all!</button>
+        </div>
       </div>
     </>
   );
