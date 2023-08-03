@@ -11,18 +11,18 @@ interface IShowTodoProps {
 export const ShowTodo = ({ todo }: IShowTodoProps) => {
   const dispatch = useContext(TodosDispatchContext);
 
+  const toggle = (id: number) => {
+    dispatch({ type: ActionType.TOGGLED, payload: id.toString() });
+  };
+
+  const deleteTodo = (id: number) => {
+    dispatch({ type: ActionType.DELETED, payload: id.toString() });
+  };
+
   return (
     <>
       <div className="todo">
-        <div
-          className="todo__task-container"
-          onClick={() =>
-            dispatch({
-              type: ActionType.TOGGLED,
-              payload: todo.id.toString(),
-            })
-          }
-        >
+        <div className="todo__task-container" onClick={() => toggle(todo.id)}>
           <input
             type="checkbox"
             className="todo__checkbox"
@@ -32,12 +32,7 @@ export const ShowTodo = ({ todo }: IShowTodoProps) => {
             {todo.task}
           </li>
         </div>
-        <button
-          className="todo__deleteBtn"
-          onClick={() => {
-            dispatch({ type: ActionType.DELETED, payload: todo.id.toString() });
-          }}
-        >
+        <button className="todo__deleteBtn" onClick={() => deleteTodo(todo.id)}>
           <i className="bi bi-x-square"></i>
         </button>
       </div>
