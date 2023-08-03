@@ -1,5 +1,4 @@
 .todo {
-  width: 78vw;
   display: grid;
   grid-template-columns: 90% 10%;
   justify-content: space-between;
@@ -8,26 +7,37 @@
   border-radius: 5px;
   background-color: white;
   border: 2px solid black;
+  transition: background-color 0.5s;
 
-  @include mix.desktop {
-    width: 45vw;
+  &:hover {
+    @include mix.desktop {
+      background-color: rgb(254, 254, 134);
+    }
   }
 
   &__task-container {
     display: inline-flex;
     align-items: baseline;
     gap: 10px;
-    width: 100%;
   }
 
   &__task {
     display: inline;
     font-family: "Jost", sans-serif;
     font-weight: bold;
+    padding-right: 10%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__checkbox {
     display: inline;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     &:checked {
       accent-color: black;

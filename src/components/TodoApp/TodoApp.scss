@@ -16,6 +16,11 @@
   @include mix.flexCenterCol;
   margin: 0;
   padding: 0;
+  width: 80vw;
+
+  @include mix.desktop {
+    width: 40vw;
+  }
 }
 
 .title {
