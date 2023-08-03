@@ -10,6 +10,7 @@ export enum ActionType {
   ADDED,
   TOGGLED,
   DELETED,
+  CLEARED,
 }
 
 export const TodosReducer = (todos: Todo[], action: IAction) => {
@@ -30,6 +31,10 @@ export const TodosReducer = (todos: Todo[], action: IAction) => {
 
     case ActionType.DELETED: {
       return todos.filter((todo) => todo.id.toString() !== action.payload);
+    }
+
+    case ActionType.CLEARED: {
+      return [];
     }
 
     default:
